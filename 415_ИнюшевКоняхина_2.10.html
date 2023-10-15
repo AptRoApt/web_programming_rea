@@ -17,8 +17,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-
-    padding: 70px; /* Adjust as needed */
 }
 
 #registration_image {
@@ -33,23 +31,34 @@ body {
 #registration_form {
     flex: 9;
 }
+#Sex {
+    position: relative;
+    float: left;
+}
 input[type='radio'] {
+    position: absolute;
+    text-align: center;
     width: 20px;
     height: 20px;
+    
 }
-#Man{
+#Man {
+    height: 20px;
+    width: 20px;
+}
+#Man::before{
     content: "\f121";
 }
-#WomanSign {
+.WomanSign {
     position: absolute;
     top:0;
     left:0;
     height: 40px;
     width: 40px;
     text-align: center;
-    content: "\f121";
 
 }
+
 </style>
 <meta charset="UTF-8">
 <meta name="author" content="Группа 415 Инюшев Коняхина">
@@ -69,8 +78,10 @@ input[type='radio'] {
             </div>
             <label for="Sex">Пол</label>
             <div id="Sex">
-                <input type="radio" name="Sex" id="Man" value="Man"/>
-                <label for="Man">Мужской</label>
+                <label for="Man">
+                <input type="radio" name="Sex" id="Man" value="Man"/>Мужской
+                <div id="male"></div>
+                </label>
                 <input type="radio" name="Sex" id="Woman" value="Woman"/>
                 <div id="WomanSign"></div>
                 <label for="Woman">Женский</label>
