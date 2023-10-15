@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+#main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 70px; /* Adjust as needed */
+}
+
+#registration_image {
+    flex: 4;
+}
+
+.registration img {
+    max-width: 100%;
+    height: auto;
+}
+
+#registration_form {
+    flex: 9;
+}
+input[type='radio'] {
+    width: 20px;
+    height: 20px;
+}
+#Man{
+    content: "\f121";
+}
+#WomanSign {
+    position: absolute;
+    top:0;
+    left:0;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    content: "\f121";
+
+}
+</style>
+<meta charset="UTF-8">
+<meta name="author" content="Группа 415 Инюшев Коняхина">
+<title>Задача 3.10</title>
+</head>
+<body>  
+    <div id="main">
+        <div id="registration_image" class="registration">
+            <img src="your-image.jpg"> <!-- Add the image source -->
+            <p>Регистрация</p>
+            <img src="your-image.jpg"> <!-- Add the image source -->
+        </div>
+        <form id="registration_form" class="registration">
+            <div>
+                <label for="Name">Имя</label>
+                <input type="text" name="Name" id="Name" autocomplete="name">
+            </div>
+            <label for="Sex">Пол</label>
+            <div id="Sex">
+                <input type="radio" name="Sex" id="Man" value="Man"/>
+                <label for="Man">Мужской</label>
+                <input type="radio" name="Sex" id="Woman" value="Woman"/>
+                <div id="WomanSign"></div>
+                <label for="Woman">Женский</label>
+            </div>
+            <div>
+                <label for="E-mail">E-mail</label>
+                <input type="text" name="E-mail" id="E-mail" autocomplete="email">
+            </div>
+            <div>
+                <label for="Country">Страна</label>
+                <input type="text" name="Country" id="Country" autocomplete="country-name">
+            </div>
+            <input type="submit" value="ОТПРАВИТЬ">
+        </form>
+    </div>
+</body>
+</html>
