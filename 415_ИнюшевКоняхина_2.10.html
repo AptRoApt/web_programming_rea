@@ -2,100 +2,85 @@
 <html>
 <head>
 <style>
-* {
-    box-sizing: border-box;
-}
-body {
-    margin: 0;
-    display: flex;
-    height: 100vh;
-    align-items: center;
-    justify-content: center;
-}
+    *{box-sizing: border-box;}
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #F7F7F7;
+    }
 
-#main {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#registration_image {
-    flex: 4;
-}
-
-.registration img {
-    max-width: 100%;
-    height: auto;
-}
-
-#registration_form {
-    flex: 9;
-}
-#Sex {
-    position: relative;
-    float: left;
-}
-input[type='radio'] {
-    position: absolute;
-    text-align: center;
-    width: 20px;
-    height: 20px;
+    #registration {
+        
+        background: #ffd500;
+        width:550px;
+        display: flex;
+    }   
     
-}
-#Man {
-    height: 20px;
-    width: 20px;
-}
-#Man::before{
-    content: "\f121";
-}
-.WomanSign {
-    position: absolute;
-    top:0;
-    left:0;
-    height: 40px;
-    width: 40px;
-    text-align: center;
+    #right_side {
+        background: white;  
+        flex: 7;
+    }
 
-}
+    #right_side form label {
+        height: 50px; 
+        margin: 10px 10px;
+    }
+
+    #right_side form {
+        display: grid;
+        justify-items: left;
+    }
+
+
+    #left_side {
+        flex: 4;
+    }
+
+    #submitButton {
+        margin: auto;
+    }
+
 
 </style>
 <meta charset="UTF-8">
-<meta name="author" content="Группа 415 Инюшев Коняхина">
-<title>Задача 3.10</title>
+<meta name="author" content="Инюшев Коняхина">
+<title> Задача 1 </title>
 </head>
-<body>  
-    <div id="main">
-        <div id="registration_image" class="registration">
-            <img src="your-image.jpg"> <!-- Add the image source -->
-            <p>Регистрация</p>
-            <img src="your-image.jpg"> <!-- Add the image source -->
-        </div>
-        <form id="registration_form" class="registration">
-            <div>
-                <label for="Name">Имя</label>
-                <input type="text" name="Name" id="Name" autocomplete="name">
-            </div>
-            <label for="Sex">Пол</label>
-            <div id="Sex">
-                <label for="Man">
-                <input type="radio" name="Sex" id="Man" value="Man"/>Мужской
-                <div id="male"></div>
+<body>
+    <div id="registration">
+        <span id="left_side">
+        <h1>Регистрация</h1>
+        </span>
+        <span id="right_side">
+            <form>
+                <label class="Name" for="Name">Имя<br>  
+                    <input class="Name" type="text" name="Name" autocomplete="name">
                 </label>
-                <input type="radio" name="Sex" id="Woman" value="Woman"/>
-                <div id="WomanSign"></div>
-                <label for="Woman">Женский</label>
-            </div>
-            <div>
-                <label for="E-mail">E-mail</label>
-                <input type="text" name="E-mail" id="E-mail" autocomplete="email">
-            </div>
-            <div>
-                <label for="Country">Страна</label>
-                <input type="text" name="Country" id="Country" autocomplete="country-name">
-            </div>
-            <input type="submit" value="ОТПРАВИТЬ">
-        </form>
+                <label class="Sex" for="Sex">Пол<br>
+                    <div id="Sex">
+                    <label for="Male">
+                    <input class="Sex" type="radio" name="Male">Мужской
+                    </label>
+                    <label for="Female">
+                        <input class="Sex" type="radio" name="Female">Женский
+                    </label>
+                </div>
+                </label>
+                <label class="Email" for="Email">E-mail<br>
+                    <input class="Email" name="Email" type="text" autocomplete="email">
+                </label>
+                <label class="Country" for="Country">Страна<br>
+                    <select name="Country">
+                        <option value="Russia">Россия</option>
+                        <option value="Ukraine">Украина</option>
+                    </select>
+                </label>
+            </form>
+            <input id="submitButton" type="submit" value="ОТПРАВИТЬ">
+        </span>
     </div>
 </body>
 </html>

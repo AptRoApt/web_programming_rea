@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+*{
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background: #F7F7F7;
+}
+
+#main {
+    background: #ffd500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:550px;
+}
+
+#registration_image {
+    width:225px;
+}
+
+.registration img {
+    max-width: 100%;
+    height: auto;
+}
+
+#registration_form {
+    width: calc(100% - 225px);
+    background: white;
+    flex: 12;
+    display: grid;
+}
+
+#registration_form .element {
+    margin:10px 10px 10px 10px;
+}
+
+#Sex {
+    height: 40px;
+}
+
+#Sex label {
+    position: relative;
+}
+
+#Sex label a {
+    padding-left: 40px;
+    position: relative;
+    top: 25%;
+}
+
+input[type='radio'] {
+    margin: 0;
+    top:0;
+    left: 0;    
+    position: absolute;
+    text-align: center;
+    width: 36px;
+    height: 36px;
+}
+#male {
+    top: 0;
+    left: 0;
+    position: absolute;
+    text-align: center;
+    height: 36px;
+    width: 36px;
+}
+#WomanSign{
+    top: 0;
+    left: 0;
+    position: absolute;
+    align-items: center;
+    text-align: center;
+    height: 36px;
+    width: 36px;
+}
+#WomanSign::before{
+    position: relative;
+    top: -65%;
+    left:0%; 
+    font-size: 36px;
+    height: 36px;
+    width: 36px;
+    content:"♀"
+}
+#male::before{  
+    position: relative;
+    top: -69%;
+    left:0%; 
+    font-size: 36px;
+    content: "♂";
+}
+
+        
+</style>
+<meta charset="UTF-8">
+<meta name="author" content="Группа 415 Инюшев Коняхина">
+<title>Задача 3.10</title>
+</head>
+<body>  
+    <div id="main">
+        <div id="registration_image" class="registration">
+            <img src="your-image.jpg"> <!-- Add the image source -->
+            <h1>Регистрация</h1>
+            <img src="your-image.jpg"> <!-- Add the image source -->
+        </div>
+        <form id="registration_form" class="registration">
+            <div class="element">
+                <label for="NameInput">Имя</label>     
+                <br>  
+                <input type="text" name="Name" id="NameInput" autocomplete="name">
+            </div>
+            <div class="element" id="Sex">
+            <label for="Sex">Пол</label><br>
+            <label for="Man">
+                <input type="radio" name="Sex" id="Man" value="Man"/>
+                <div id="male"></div><a>Мужской</a>
+                </label>
+                <label for="Woman">
+                <input type="radio" name="Sex" id="Woman" value="Woman"/>
+                <div id="WomanSign"></div><a>Женский</a>
+                </label>
+            </div>
+            <div class="element">
+                <br>
+                <label for="E-mail">E-mail</label><br>
+                <input type="text" name="E-mail" id="E-mail" autocomplete="email">
+            </div>
+            <div class="element">
+                <br>
+                <label for="CountryInput">Страна</label><br>
+                <input type="text" name="Country" id="CountryInput" autocomplete="country-name">
+            </div>
+            <input type="submit" value="ОТПРАВИТЬ">
+        </form>
+    </div>
+</body>
+</html>
