@@ -2,7 +2,7 @@
 <html>
 <head>
 <style>
-    *{box-sizing: border-box;}
+    /**{box-sizing: border-box;}*/
     body {
         margin: 0;
         height: 100vh;
@@ -13,7 +13,7 @@
     }
 
     #registration {
-        
+        height: 400px;
         background: #ffd500;
         width:550px;
         display: flex;
@@ -21,27 +21,57 @@
     
     #right_side {
         background: white;  
-        flex: 7;
+        flex: 11;
     }
 
-    #right_side form label {
-        height: 50px; 
-        margin: 10px 10px;
+    #left_side {
+        flex: 8;
     }
 
     #right_side form {
         display: grid;
         justify-items: left;
+        gap: 5% 5%;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        height: 100%;
+        align-items:center;
     }
 
+    .formElements{
+        margin-left: 10%;
+        margin-right: 10%;
+        width: 80%;
+    }
 
-    #left_side {
-        flex: 4;
+    .input {
+        background: #e6e6e6;
+    }
+
+    .input[type="radio"]{
+        color: red;
+        height: 30px;
+        width: 30px;
+    }
+    
+    #Sex div label {
+        position: relative;
+        margin-bottom: 5%;
+    }
+
+    .radiotext {
+        left: 0;
+    }
+
+    #top {
+        margin-top: 10%;
     }
 
     #submitButton {
         margin: auto;
+        margin-top: 10%;
+        margin-bottom: 10%;
     }
+
 
 
 </style>
@@ -56,30 +86,30 @@
         </span>
         <span id="right_side">
             <form>
-                <label class="Name" for="Name">Имя<br>  
-                    <input class="Name" type="text" name="Name" autocomplete="name">
+                <label id="top" class="formElements" for="Name">Имя<br>  
+                    <input class="input" type="text" name="Name" autocomplete="name">
                 </label>
-                <label class="Sex" for="Sex">Пол<br>
+                <label class="formElements" for="Sex">Пол<br>
                     <div id="Sex">
-                    <label for="Male">
-                    <input class="Sex" type="radio" name="Male">Мужской
-                    </label>
-                    <label for="Female">
-                        <input class="Sex" type="radio" name="Female">Женский
-                    </label>
-                </div>
+                        <label for="Male">
+                            <input class="input" type="radio" name="Male"><a class="radiotext">Мужской</a>
+                        </label>
+                        <label for="Female">
+                            <input class="input" type="radio" name="Female"><a class="radiotext">Женский</a>
+                        </label>
+                        </div>
                 </label>
-                <label class="Email" for="Email">E-mail<br>
-                    <input class="Email" name="Email" type="text" autocomplete="email">
+                <label class="formElements" for="Email">E-mail<br>
+                    <input class="input" name="Email" type="text" autocomplete="email">
                 </label>
-                <label class="Country" for="Country">Страна<br>
-                    <select name="Country">
+                <label class="formElements" for="Country">Страна<br>
+                    <select class="input" name="Country">
                         <option value="Russia">Россия</option>
                         <option value="Ukraine">Украина</option>
                     </select>
                 </label>
+                <input id="submitButton" type="submit" value="ОТПРАВИТЬ">
             </form>
-            <input id="submitButton" type="submit" value="ОТПРАВИТЬ">
         </span>
     </div>
 </body>
