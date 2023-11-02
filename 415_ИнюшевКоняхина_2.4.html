@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="author" content="Инюшев Коняхина">
+<title> Задача 2.4 </title>
+<style>
+    * {
+        font-weight: bold;
+    }
+    table {
+        border: 1px solid red;
+        border-collapse: collapse;
+    }
+    table * {
+        border:  1px dashed red;
+    }
+    thead tr {
+        height: 8px;
+    }
+    tbody tr {
+        /*line-height: 166%;*/
+        height: 42px;
+    }
+    td {
+        width: 25%;
+        padding: 0;
+    }
+    tr td:nth-child(n+2){
+        font-weight:normal;
+        font-size: small;
+    }
+    tr:nth-child(odd) td:nth-child(even){
+        background-color: lightgray;
+    }
+    tr:nth-child(even) td:nth-child(2n+3) {
+        background-color:lightgray;
+    }
+    tbody tr:nth-child(1) td:nth-child(n+2){
+        vertical-align: top;
+    }
+    tbody tr:nth-child(2) td:nth-child(n+2){
+        vertical-align: center;
+    }
+    tbody tr:nth-child(3) td:nth-child(n+2){
+        vertical-align:bottom;
+    }
+    tbody td:nth-child(2){
+        text-align: left;
+    }
+    tbody td:nth-child(3){
+        text-align: middle;
+    }
+    tbody td:nth-child(4){
+        text-align: right;
+    }
+    td:nth-child(1){
+        text-align: center;
+        vertical-align:middle;
+    }
+
+</style>
+</head>
+<body>
+<table>
+    <thead>
+        <th>vertical\text-align</th>
+        <th>left</th>
+        <th>center</th>
+        <th>right</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>top</td>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>middle</td>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>bottom</td>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>
