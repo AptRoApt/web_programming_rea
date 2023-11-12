@@ -12,9 +12,10 @@
     document.write(strok, "<br>");
     document.write("Длина строки: ", strok.length, "<br>");
     for (let i=0; i<strok.length; i+=3){
-        if (i%3==0){
-        document.write(strok[i],strok[i+1],strok[i+2],"..");
+        if (i >= strok.length){
+          i = strok.length-1;
         }
+        document.write(strok[i],strok[i+1],strok[i+2],"..");
     }
   </script>
 </body>
