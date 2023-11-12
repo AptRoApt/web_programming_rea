@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="author" content="Инюшев Коняхина">
+<title> Задача 3.2 </title>
+</head>
+<body>
+
+  <script>
+    strok = "Он шел ночною, порой ночною за темной рекою, за быстрой водою. Не знал укора, не знал покоя, за желтой луною, за ней, вороною."
+    document.write(strok, "<br>");
+    document.write("Длина строки: ", strok.length, "<br>");
+    for (let i=0; i<strok.length; i+=3){
+        if (i%3==0){
+        document.write(strok[i],strok[i+1],strok[i+2],"..");
+        }
+    }
+  </script>
+</body>
+</html>
