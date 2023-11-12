@@ -8,12 +8,12 @@
 <body>
 
   <script>
-    strok = "Он шел ночною, порой ночною за темной рекою, за быстрой водою. Не знал укора, не знал покоя, за желтой луною, за ней, вороною."
+    strok = "ПИ05 Коняхина Екатерина Алексеевна Инюшев Ростислав Сергеевич"
     document.write(strok, "<br>");
     document.write("Длина строки: ", strok.length, "<br>");
     for (let i=0; i<strok.length; i+=3){
-        if (i >= strok.length){
-          i = strok.length-1;
+        if (i >= strok.length-2){
+          i = strok.length-3;
         }
         document.write(strok[i],strok[i+1],strok[i+2],"..");
     }
