@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="author" content="Инюшев Коняхина">
+<title> Задача 3.3 </title>
+</head>
+<body>
+<script>
+    let someRandomString = "15.27д-ПИ05/22бИнюшевКоняхина";
+    document.write(someRandomString + " " + someRandomString.length);
+    document.write("<br>");
+    document.write(someRandomString[0]);
+    document.write("<br>");
+    let i = 1
+    while(i < someRandomString.length){
+        if (i > someRandomString) {
+            i = someRandomString.length - 1;
+        }
+        document.write(someRandomString.substring(i,i+i));
+        document.write("<br>");
+        i+=i;
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="author" content="Инюшев Коняхина">
+<title> Задача 3.5 </title>
+</head>
+<body>
+<script>
+    let colorNames = ["красный", "оранжевый", "жёлтый", "зелёный", "голубой", "синий", "фиолетовый"]
+    let colorCodes = ["#FF0000", "#FFA500", "#FFFF00", "#008000", "#00BFFF", "#0000FF", "#800080"];
+    for (let i = 0; i < colorCodes.length; i++) {
+        let p = document.createElement("p");
+        let color = document.createAttribute("style");
+        color.value = "color:" + colorCodes[i];
+        p.innerText = colorNames[i];
+        p.setAttributeNode(color);
+        document.body.appendChild(p);
+    }
+
+</script>
+</body>
+</html>
