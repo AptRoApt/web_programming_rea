@@ -5,38 +5,86 @@
 <meta name="author" content="Инюшев Коняхина">
 <title> Задача 3.7 </title>
 <style>
-    * {font-family: 'Times New Roman', Times, serif;}
-    table {
+    * {
+        font-family: 'Times New Roman', Times, serif;
+        box-sizing: border-box;
+        
+        }
+    #first_table  {
         border: 0px;
         border-collapse: collapse;
-        background-color: lightgray;
-        width: 110px;
-        vertical-align: bottom;
+        background-color: #e7e6e6;
+        width: 106px;
         padding: 0;
+        margin: 10px;  
     }
     input {
+        vertical-align: bottom;
         width: 36px;
+        background-color: #e7e6e6;
+        border: 0px;
+        width: 106px;
+        font-style: italic;
+    }
+    input:focus {
+        outline: none;
+    }
+    tr {
+        vertical-align: bottom;
     }
     td {
         height: 36px;
+        padding-bottom: 4px;
+        padding-left: 4px;    
     }
+    #insert{    
+        background-color: #bcd4ec;
+        width: 110px;
+        height: 36px;                   
+        border: 1px solid black ;
+        display: flex;
+        align-items:end;
+        padding-left: 4px;
+        padding-bottom: 4px;            
+        justify-content: center; 
+    }
+    #button_td {
+        padding:0%;
+        }
+    #insert:hover {
+        background-color: #8ea1b3;
+    }
+    #first {
+        font-size:small;
+    }
+    #second_table  {
+        border: 1px solid black;        
+        border-collapse: collapse;  
+    }
+    #second_table * {
+        border: 1px solid black;            
+    }
+
+
 </style>
 </head>
 <body>
-    <table>
+    <table id="first_table">
         <thead>
-            <td>Введите число</td>
+            <td id="first"><i> Введите число</i></td>
         </thead>
         <tbody>
             <td><input type="text"></td>
         </tbody>
         <tfoot>
-            <td><button id="insert">Сохранить</button></td>
+            <td id="button_td"><button id="insert"><i><b>Сохранить</i></b></button>
         </tfoot>
     </table>
-    <thead><td><i>Сохранённые числа</i></td></thead>
-    <tbody></tbody>
-    <tfoot><td><button type="button" id="Truncate"><b><i>Очистить</i></b></button></td></tfoot>
+    <table id="second_table">
+        <thead><tr><td><i>Сохранённые числа</i></td></tr></thead>
+        <tbody><p>  </p></tbody>
+        <tfoot><tr><td><button type="button" id="Truncate"><b><i>Очистить</i></b></button></td></tr></tfoot>
+    </table>
 </table>
 <script></script>
 </body>
