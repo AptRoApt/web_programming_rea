@@ -7,6 +7,7 @@
 <style>
     * {
         font-family: 'Times New Roman', Times, serif;
+        font-style: italic;
         box-sizing: border-box;
         
         }
@@ -48,7 +49,7 @@
         padding-bottom: 4px;            
         justify-content: center; 
     }
-    #button_td {
+    .button_td {
         padding:0%;
         }
     #insert:hover {
@@ -58,34 +59,75 @@
         font-size:small;
     }
     #second_table  {
+        width: 140px;
+        padding: 0;
+        margin: 10px; 
         border: 1px solid black;        
         border-collapse: collapse;  
     }
-    #second_table * {
+    #second_table tbody, #second_table thead, #second_table tfoot {
         border: 1px solid black;            
     }
-
-
+    .text {
+        font-size: small;
+    }
+    #truncate {
+        background-color: #deeaf6       ;
+        width: 140px;
+        height: 36px;                   
+        border: 0px solid black ;
+        display: flex;
+        align-items:end;
+        padding-left: 4px;
+        padding-bottom: 4px;            
+        justify-content: center; 
+    }
+    #truncate:hover {
+background-color: #9fa6af;
+    }
 </style>
 </head>
 <body>
+    <script>
+        function saveNumber() {
+            let num = document.getElementById("numInput").value;
+            if (isNaN(num) || num == null || num == "") {
+                alert("Введите число!");
+            }
+            else {
+                let holder = document.getElementById("savedNumbers");
+                let tr = document.createElement("tr");
+                let td = document.createElement("td");
+                let p = document.createElement("p");
+                p.setAttribute("id", "p"+holder.childElementCount);
+                p.innerText=num;
+                holder.appendChild(tr);
+                tr.appendChild(td);
+                td.appendChild(p);    
+            }
+            document.getElementById("numInput").value = "";
+        }
+        function truncateNumbers() {
+            document.getElementById("savedNumbers").innerHTML='';
+        }
+    </script>
     <table id="first_table">
-        <thead>
-            <td id="first"><i> Введите число</i></td>
+        <thead> 
+            <td class="text">Введите число</td>
         </thead>
         <tbody>
-            <td><input type="text"></td>
+            <td><input id="numInput" type="text"></td>
         </tbody>
         <tfoot>
-            <td id="button_td"><button id="insert"><i><b>Сохранить</i></b></button>
+            <td class="button_td"><button onclick="saveNumber()" id="insert"><b>Сохранить</b></button>
         </tfoot>
     </table>
+    
     <table id="second_table">
-        <thead><tr><td><i>Сохранённые числа</i></td></tr></thead>
-        <tbody><p>  </p></tbody>
-        <tfoot><tr><td><button type="button" id="Truncate"><b><i>Очистить</i></b></button></td></tr></tfoot>
+        <thead class="text"><tr><td>Сохранённые числа</td></tr></thead>
+        <tbody id="savedNumbers"></tbody>
+        <tfoot><tr><td onclick="truncateNumbers()" class="button_td"><button type="button" id="truncate"><b>Очистить</b></button></td></tr></tfoot>
     </table>
 </table>
-<script></script>
 </body>
 </html>
