@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="author" content="Инюшев Коняхина">
+<title> Задача 3.4 </title>
+</head>
+<body>
+
+  <script>
+    strok = "ПИ05 Коняхина Екатерина Алексеевна Инюшев Ростислав Сергеевич"
+    document.write(strok, "<br>");
+    for(let i=0; i<strok.length; i+=1){
+        document.write(strok.substr(i,i+1));
+        if (i==0) {document.write(" ");}
+        else {
+            document.write(".".repeat(i+1));}
+    }
+  </script>
+</body>
+</html>
