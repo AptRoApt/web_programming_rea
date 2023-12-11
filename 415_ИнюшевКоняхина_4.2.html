@@ -3,10 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="author" content="Инюшев Коняхина">
-<title> Задача 4.1 </title>
+<title> Задача 4.2 </title>
 </head>
 <body>
 
+  <select id="month" name="month" onchange="Calendar()">
+    <option value="0">Январь</option>
+    <option value="1">Февраль</option>
+    <option value="2">Март</option>
+    <option value="3">Апрель</option>
+    <option value="4">Май</option>
+    <option value="5">Июнь</option>
+    <option value="6">Июль</option>
+    <option value="7">Август</option>
+    <option value="8">Сентябрь</option>
+    <option value="9">Октябрь</option>
+    <option value="10">Ноябрь</option>
+    <option value="11">Декабрь</option>
+  </select>
+  <input oninput="Calendar()" id="year" type="number" min="1" name="year" size="4">
     <div id="calendar"></div>
 <script>
     function getDayNum(date) {
@@ -21,7 +36,14 @@
         return monthNames[month];
     }
     
-    function Calendar(elem, year, month) {
+    function Calendar() {
+      calendar = document.getElementById("calendar");
+      calendar.innerHTML = "";
+      yearInput = document.getElementById("year");
+      year = yearInput.value;
+      console.log(year);
+      monthInput = document.getElementById("month");
+      month = monthInput.selectedIndex;
       let d = new Date(year, month);
       let table = `${getMonthName(month)} ${year}
         <table>
@@ -53,12 +75,17 @@
         }
       }
       table += '</tr></table>';
-      elem.innerHTML = table;
+      calendar.innerHTML = table;
     }
     currentDate = new Date();
-    chosenYear = currentDate.getUTCFullYear();
-    chosenMonth = currentDate.getMonth();
-    Calendar(calendar, chosenYear,chosenMonth);
+    currentYear = currentDate.getUTCFullYear();
+    currentMonth = currentDate.getMonth();
+    yearInput = document.getElementById("year");
+    yearInput.setAttribute("value", currentYear.toString());
+    monthInput = document.getElementById("month");
+    monthInput.setAttribute("value", currentMonth.toString());
+    Calendar();
+    
 </script>
 </body>
 </html>
